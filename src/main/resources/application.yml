@@ -1,1 +1,40 @@
+spring:
+  profiles:
+    group:
+      dev: dev, common
+      local: local, common
+    active:
+      - dev
 
+---
+spring:
+  config:
+    activate:
+      on-profile: common
+  application:
+    name: tworks-v1
+  main:
+    banner-mode: OFF    #
+  #
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    suffix: .html
+    encoding: 'UTF-8'
+    enabled: true
+    cache: false    #
+  #
+  web:
+    resources:
+      static-locations: file:src/main/resources/static/
+      cache:
+        period: 36000   #
+
+#
+server:
+  servlet:
+    application-display-name: TWORKS
+    encoding:
+      charset: 'UTF-8'
+      enabled: true
+      force-request: true
+---
