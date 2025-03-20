@@ -12,29 +12,87 @@ spring:
     activate:
       on-profile: common
   application:
-    name: tworks-v1
+    name: TWORKS
   main:
     banner-mode: OFF    #
-  #
+  # 웹 브라우저의 새로고침을 통한 화면단 수정 이력 반영을 위해 템플릿 파일 경로와 캐싱 설정 값 지정
   thymeleaf:
     prefix: file:src/main/resources/templates/
     suffix: .html
     encoding: 'UTF-8'
     enabled: true
     cache: false    #
-  #
+  # 웹 브라우저의 새로고침을 통한 화면단 수정 이력 반영을 위해 정적 리소스 파일 경로와 캐싱 설정값 지정
   web:
     resources:
       static-locations: file:src/main/resources/static/
       cache:
-        period: 36000   #
+        period: 36000   # 캐싱 기간을 36000분(10시간)으로 지정
 
-#
+# 공통 서버 설정
 server:
   servlet:
-    application-display-name: TWORKS
     encoding:
       charset: 'UTF-8'
       enabled: true
       force-request: true
+
 ---
+# 개발 환경 설정 : H2 인 메모리 데이터베이스 사용
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  # H2 데이터베이스 연결 정보 설정
+  datasource:
+    url: jdbc:h2:mem:tworks;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    driver-class-name: org.h2.Driver
+  # 스키마 버전 관리 비활성화
+  flyway:
+    enabled: false
+  # SQL 초기 데이터 설정
+  sql:
+    init:
+      # ALWAYS : 애플리케이션 실행 때마다 SQL 스크립트 실행 / NEVER : SQL 스크립트 실행X
+      mode: embedded    # 내장 데이터베이스 사용시 SQL 스크립트 실행
+  h2:
+    # H2 콘솔 접속 정보 설정
+    console:
+      path: /h2-console
+      enabled: true
+
+# 개발 환경 로깅 레벨 지정
+logging:
+  level:
+    web: debug
+    root: debug
+
+# 개발 환경 내장 톰캣 서버의 포트 번호 변경
+server:
+  port: 80
+
+---
+# 로컬 데이터베이스 : 마리아DB 사용
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  # 로컬 데이터베이스인 마리아 DB의 연결 정보 설정
+  datasource:
+    url: jdbc:mariadb://localhost:3306/tworks?characterEncoding=UTF-8&serverTimeZone=Asia/Seoul
+    username: suihin92
+    password: tq7593
+    driver-class-name: org.mariadb.jdbc.Driver
+
+# 로컬 환경의 로깅 레벨 지정
+logging:
+  level:
+    web: INFO
+    root: WARN
+
+# 로컬 환경 내장 톰캣 서버의 포트 번호 변경
+server:
+  port: 8082

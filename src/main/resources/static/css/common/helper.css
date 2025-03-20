@@ -1,0 +1,139 @@
+@charset "utf-8";
+/*! tworks v1.0 | copyright 2025. suihin all rights reserved | https://github.com/tnbin847 */
+
+/* Themes... */
+:root {
+    --color-primary: #434CE6;
+    --color-secondary: #D1D3FA;
+    --color-accent: #3E83EB;
+    --color-muted: #A7ACB6;
+    --color-border: #D7DBDF;
+    --color-light: #F8F8F9;
+    --color-dark: #202939;
+
+    --color-icon: #6A6F85;
+    --color-text: #484757;
+    --color-text-secondary: #6C6B7E;
+    
+    --color-ok: #76C398;
+    --color-ok-bg: #CFEADB;
+    --color-warn: #FBCA77;
+    --color-warn-bg: #FDEFD7;
+    --color-danger: #EE585B;
+    --color-danger-bg: #FACFD0;
+
+    --color-kakao-primary: #FAE100;
+    --color-kakao-secondary: #3C1D1E;
+    --color-google-primary: #F1F1F1;
+    --color-google-secondary: #EBEBEB;
+    --color-google-tertiary: #525F7A;
+
+    --black: #242C2D;
+    --white: #FFFFFF;
+
+
+    --space-unit: 16px;
+
+    --space-xxxs: calc(0.25 * var(--space-unit));   /* 4px */
+    --space-xxs: calc(0.5 * var(--space-unit));     /* 8px */
+    --space-xs: calc(0.75 * var(--space-unit));     /* 12px */
+    --space-sm: calc(1.25 * var(--space-unit));     /* 20px */
+    --space-md: calc(1.5 * var(--space-unit));      /* 24px */
+    --space-lg: calc(1.75 * var(--space-unit));     /* 28px */
+    --space-xl: calc(2 * var(--space-unit));        /* 32px */
+    --space-xxl: calc(2.25 * var(--space-unit));    /* 36px */
+    --space-xxxl: calc(2.75 * var(--space-unit));   /* 44px */
+
+
+    --font-scale: 4px;
+
+    --font-xs: calc(4px + var(--font-scale));       /* 8px */
+    --font-sm: calc(8px + var(--font-scale));       /* 12px */
+    --font-md: calc(12px + var(--font-scale));      /* 16px */
+    --font-lg: calc(16px + var(--font-scale));      /* 20px */
+    --font-xl: calc(20px + var(--font-scale));      /* 24px */
+    --font-xxl: calc(24px + var(--font-scale));     /* 28px */
+
+    --font-normal: 13px;
+
+    
+    --icon-scale: 6px;
+    
+    --icon-md: calc(var(--font-sm) + var(--icon-scale));    /* 18px */
+    --icon-lg: calc(var(--font-md) + var(--icon-scale));    /* 22px */
+    --icon-xl: calc(var(--font-lg) + var(--icon-scale));    /* 26px */
+    --icon-xxl: calc(var(--font-xl) + var(--icon-scale));   /* 30px */
+
+    --icon-normal: calc(var(--font-xs) + var(--icon-scale));
+
+
+    --radius-rounded-sm: 3px;
+    --radius-rounded-md: 6px;
+    --radius-rounded-lg: 12px;
+    --radius-rounded-full: 50px;
+}
+
+/* Utilities... */
+:root {
+    --form-control-padding: var(--space-xxs);
+    --form-control-i-element-height: 22px;
+    --form-control-i-icon-vertical-offset: var(--space-xs);
+    --form-control-i-icon-horizontal-offset: var(--space-unit);
+    --form-control-field-radius: var(--radius-rounded-sm);
+}
+
+
+.box {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.flex {
+    display: flex;
+    flex-wrap: nowrap;  /* Flex wrapping default : nowrap */
+}
+
+.column {
+    flex-direction: column;
+}
+.column.is-align-top {
+    align-items: flex-start;
+    justify-content: center;
+}
+.column.is-align-centered {
+    align-items: center;
+}
+.column.is-align-bottom {
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.row {
+    flex-direction: row;
+}
+.row.is-align-left {
+    justify-content: flex-start;
+    align-items: center;
+}
+.row.is-align-centered {
+    justify-content: center;
+}
+.row.is-align-right {
+    justify-content: flex-end;
+    align-items: center;
+}
+.row.is-align-space-between {
+    justify-content: space-between;
+    align-items: center;
+}
+.row.is-align-space-around {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.column.is-align-midst, .row.is-align-midst {
+    justify-content: center;
+    align-items: center;
+}
