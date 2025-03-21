@@ -1,40 +1,77 @@
 @charset "utf-8";
 
-/*! tworks v1.0 | copyright 2025. suihin all rights reserved | https://github.com/tnbin847 */
+/*! Suihin's common CSS v1.0.0 | https://github.com/tnbin847 */
 
-/* Themes... */
 :root {
+    /* -----------------------------------------------
+        || COLOR STYLES 
+     ----------------------------------------------- */
+    /* MAIN COLORS */
     --color-primary: #434CE6;
     --color-secondary: #D1D3FA;
-    --color-accent: #3E83EB;
     --color-muted: #A7ACB6;
+    --color-accent: #3E83EB;
     --color-border: #D7DBDF;
     --color-light: #F8F8F9;
-    --color-dark: #202939;
+    --color-dark: #484757;
 
+    /* TEXT COLORS */
+    --color-text: var(--color-dark);
+    --color-text-helper: #6C6B7E;
+    --color-text-placeholder: #B5BAC2;
+
+    /* ICON COLORS */
     --color-icon: #6A6F85;
-    --color-text: #484757;
-    --color-text-secondary: #6C6B7E;
+    --color-icon-primary: var(--color-primary);
+    --color-icon-secondary: var(--color-secondary);
     
-    --color-ok: #76C398;
-    --color-ok-bg: #CFEADB;
-    --color-warn: #FBCA77;
-    --color-warn-bg: #FDEFD7;
+    /* FEEDBACK COLORS */
+    --color-success-background: #CFEADB;
+    --color-success: #76C398;
+    --color-warning-backkground: #FDEFD7;
+    --color-warning: #FBCA77;
+    --color-danger-background: #FACFD0;
     --color-danger: #EE585B;
-    --color-danger-bg: #FACFD0;
 
-    --color-kakao-primary: #FAE100;
-    --color-kakao-secondary: #3C1D1E;
-    --color-google-primary: #F1F1F1;
-    --color-google-secondary: #EBEBEB;
-    --color-google-tertiary: #525F7A;
-
-    --black: #242C2D;
+    /* SHADES */
+    --black: #0A0C0D;
+    --gray-900: #212529;
+    --gray-800: #343A40;
+    --gray-700: #495057;
+    --gray-600: #6C757D;
+    --gray-500: #ADB5BD;
+    --gray-400: #CED4DA;
+    --gray-300: #DEE2E6;
+    --gray-200: #E9ECEF;
+    --gray-100: #F8F9FA;
     --white: #FFFFFF;
+    
+    /* SOCAIL COLORS */
+    --color-kakao-background: #FAE100;
+    --color-kakao-foreground: #3C1D1E;
+    --color-google-background: #F1F1F1;
+    --color-google-border: #EBEBEB;
+    --color-google-foreground: #525F7A;
 
 
+    /* -----------------------------------------------
+        || FONT SIZES
+     ----------------------------------------------- */
+    --font-size-base: 13px;
+
+    --font-scale: 4px;
+    --font-xs: calc(4px + var(--font-scale));
+    --font-sm: calc(8px + var(--font-scale));
+    --font-md: calc(12px + var(--font-scale));
+    --font-lg: calc(16px + var(--font-scale));
+    --font-xl: calc(20px + var(--font-scale));
+    --font-2xl: calc(24px + var(--font-scale));
+
+    
+    /* -----------------------------------------------
+        || SPACING
+     ----------------------------------------------- */
     --space-unit: 16px;
-
     --space-xxxs: calc(0.25 * var(--space-unit));   /* 4px */
     --space-xxs: calc(0.5 * var(--space-unit));     /* 8px */
     --space-xs: calc(0.75 * var(--space-unit));     /* 12px */
@@ -42,58 +79,36 @@
     --space-md: calc(1.5 * var(--space-unit));      /* 24px */
     --space-lg: calc(1.75 * var(--space-unit));     /* 28px */
     --space-xl: calc(2 * var(--space-unit));        /* 32px */
-    --space-xxl: calc(2.25 * var(--space-unit));    /* 36px */
-    --space-xxxl: calc(2.75 * var(--space-unit));   /* 44px */
+    --space-2xl: calc(2.25 * var(--space-unit));    /* 36px */
+    --space-3xl: calc(2.75 * var(--space-unit));    /* 44px */
 
 
-    --font-scale: 4px;
+    /* -----------------------------------------------
+        || ICON STYLES
+     ----------------------------------------------- */
+     --icon-size-base: 12px;
 
-    --font-xs: calc(4px + var(--font-scale));       /* 8px */
-    --font-sm: calc(8px + var(--font-scale));       /* 12px */
-    --font-md: calc(12px + var(--font-scale));      /* 16px */
-    --font-lg: calc(16px + var(--font-scale));      /* 20px */
-    --font-xl: calc(20px + var(--font-scale));      /* 24px */
-    --font-xxl: calc(24px + var(--font-scale));     /* 28px */
-
-    --font-normal: 13px;
-
-    
     --icon-scale: 6px;
-    
     --icon-md: calc(var(--font-sm) + var(--icon-scale));    /* 18px */
     --icon-lg: calc(var(--font-md) + var(--icon-scale));    /* 22px */
     --icon-xl: calc(var(--font-lg) + var(--icon-scale));    /* 26px */
-    --icon-xxl: calc(var(--font-xl) + var(--icon-scale));   /* 30px */
-
-    --icon-normal: calc(var(--font-xs) + var(--icon-scale));
+    --icon-2xl: calc(var(--font-xl) + var(--icon-scale));   /* 30px */
 
 
-    --radius-rounded-sm: 3px;
-    --radius-rounded-md: 6px;
-    --radius-rounded-lg: 12px;
-    --radius-rounded-full: 50px;
-}
-
-/* Utilities... */
-:root {
-    --form-control-padding: var(--space-xxs);
-    --form-control-i-element-height: 22px;
-    --form-control-i-icon-vertical-offset: var(--space-xs);
-    --form-control-i-icon-horizontal-offset: var(--space-unit);
-    --form-control-field-radius: var(--radius-rounded-sm);
-}
-
-
-.box {
-    display: block;
-    position: relative;
-    box-sizing: border-box;
+    /* -----------------------------------------------
+        || UTILITY STYLES
+     ----------------------------------------------- */
+    --radius-sm: 3px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-full: 50px;
 }
 
 
 .flex {
     display: flex;
-    flex-wrap: nowrap;  /* Flex wrapping default : nowrap */
+    flex-wrap:  nowrap;
 }
 
 .column {
@@ -135,6 +150,30 @@
 }
 
 .column.is-align-midst, .row.is-align-midst {
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+
+.box {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.rounded-sm {
+    border-radius: var(--radius-sm);
+}
+.rounded-md {
+    border-radius: var(--radius-md);
+}
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+.rounded-full {
+    border-radius: var(--radius-full);
 }

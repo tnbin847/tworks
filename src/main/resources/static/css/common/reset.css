@@ -1,5 +1,6 @@
 @charset "utf-8";
-/*! tworks v1.0 | copyright 2025. suihin all rights reserved | https://github.com/tnbin847 */
+
+/*! Suihin's common CSS v1.0.0 | https://github.com/tnbin847 */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
@@ -37,15 +38,6 @@ fieldset, legend, input, textarea, select, button, code, label, em, span, strong
     word-break: keep-all;
 }
 
-a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-a[role='link']:hover {
-    text-decoration: underline;
-}
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -63,28 +55,32 @@ legend {
     font-size: 0;
 }
 
-button, button[type='button'], input[type='button'], input[type='submit'] {
-    border: 0;
-    background: none;
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+a[role='link']:hover {
+    text-decoration: underline;
+}
+
+input, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;    
+    outline: none;
+}
+
+input[type='button'], input[type='submit'],
+button, button[type='button'] {
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
 }
 
-input {
+input, input[type='submit'], input[type='button'], select,
+button, button[type='button'] {
     border: 0;
     background: none;
-    appearance: none;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-select {
-    appearance: none;
-    -o-appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
 
 select::-ms-expand {
