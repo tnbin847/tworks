@@ -14,14 +14,14 @@ spring:
   application:
     name: TWORKS
   main:
-    banner-mode: OFF    #
+    banner-mode: OFF    # 서버 런타임시 콘솔에 출력되는 배너를 끈다.
   # 웹 브라우저의 새로고침을 통한 화면단 수정 이력 반영을 위해 템플릿 파일 경로와 캐싱 설정 값 지정
   thymeleaf:
     prefix: file:src/main/resources/templates/
     suffix: .html
     encoding: 'UTF-8'
     enabled: true
-    cache: false    #
+    cache: false    # 모든 개발 완료 후 캐시값을 true로 변경
   # 웹 브라우저의 새로고침을 통한 화면단 수정 이력 반영을 위해 정적 리소스 파일 경로와 캐싱 설정값 지정
   web:
     resources:
