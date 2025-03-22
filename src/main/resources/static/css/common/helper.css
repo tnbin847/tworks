@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*? description about this stylesheet file... */
+/** description about this stylesheet file... */
 /*! common css v1.0 |  | https://github.com/tnbin847 */
 
 :root {
@@ -13,6 +13,11 @@
     --light: #F8F8F9;
     --dark: #484757;
     --icon: #6A6F85;
+    --helper: #6C6B7E;
+
+    --ok: #76C398;
+    --warn: #FBCA77;
+    --danger: #EE585B;
 
     --white: #FFFFFF;
     --gray-100: #F8F9FA;
@@ -36,38 +41,39 @@
     --font-primary: 'pretendard-regular', sans-serif;
     --font-secondary: 'pretendard-medium', sans-serif;
 
-    --font-style-heading: 'pretendard-semibold', sans-serif;
     --font-style-placeholder: 'pretendard-light', sans-serif;
+    --font-style-heading-primary: 'pretendard-semibold', sans-serif;
+    --font-style-heading-secondary: 'montserrat-black', sans-serif;
 
     --text-base-size: 13px;
     --text-scale: 4px;
-    --text-xs: calc(px + var(var(--text-scale)));
-    --text-sm: calc(px + var(var(--text-scale)));
-    --text-md: calc(px + var(var(--text-scale)));
-    --text-lg: calc(px + var(var(--text-scale)));
-    --text-xl: calc(px + var(var(--text-scale)));
-    --text-2xl: calc(px + var(var(--text-scale)));
+    --text-xs: calc(4px + var(var(--text-scale)));                  /* 8px */
+    --text-sm: calc(8px + var(var(--text-scale)));                  /* 12px */
+    --text-md: calc(12px + var(var(--text-scale)));                 /* 16px */
+    --text-lg: calc(16px + var(var(--text-scale)));                 /* 20px */
+    --text-xl: calc(20px + var(var(--text-scale)));                 /* 24px */
+    --text-2xl: calc(24px + var(var(--text-scale)));                /* 28px */
 
     /* Spacing */
     --space-unit: 16px;
-    --space-3xs: calc(0.25 * var(--space-unit));
-    --space-2xs: calc(0.5 * var(--space-unit));
-    --space-xs: calc(0.75 * var(--space-unit));
-    --space-sm: calc(1.25 * var(--space-unit));
-    --space-md: calc(1.5 * var(--space-unit));
-    --space-lg: calc(1.75 * var(--space-unit));
-    --space-xl: calc(2 * var(--space-unit));
-    --space-2xl: calc(2.25 * var(--space-unit));
-    --space-3xl: calc(2.75 * var(--space-unit));
+    --space-3xs: calc(0.25 * var(--space-unit));                    /* 4px */
+    --space-2xs: calc(0.5 * var(--space-unit));                     /* 8px */
+    --space-xs: calc(0.75 * var(--space-unit));                     /* 12px */
+    --space-sm: calc(1.25 * var(--space-unit));                     /* 20px */    
+    --space-md: calc(1.5 * var(--space-unit));                      /* 24px */
+    --space-lg: calc(1.75 * var(--space-unit));                     /* 28px */
+    --space-xl: calc(2 * var(--space-unit));                        /* 32px */
+    --space-2xl: calc(2.25 * var(--space-unit));                    /* 36px */
+    --space-3xl: calc(2.75 * var(--space-unit));                    /* 44px */
 
     /* Icons */
     --icon-base-size: 12px;
-    --icon-scale: calc(var(--text-scale) + 2px);
-    --icon-sm: calc(var(--text-xs) + var(--icon-scale));
-    --icon-md: calc(var(--text-sm) + var(--icon-scale));
-    --icon-lg: calc(var(--text-md) + var(--icon-scale));
-    --icon-xl: calc(var(--text-lg) + var(--icon-scale));
-    --icon-2xl: calc(var(--text-xl) + var(--icon-scale));
+    --icon-scale: calc(var(--text-scale) + 2px);                    /* 6px */  
+    --icon-sm: calc(var(--text-xs) + var(--icon-scale));            /* 14px */
+    --icon-md: calc(var(--text-sm) + var(--icon-scale));            /* 18px */
+    --icon-lg: calc(var(--text-md) + var(--icon-scale));            /* 22px */
+    --icon-xl: calc(var(--text-lg) + var(--icon-scale));            /* 26px */
+    --icon-2xl: calc(var(--text-xl) + var(--icon-scale));           /* 30px */
 
     /* Border */
     --border-width-sm: 1px;
@@ -90,132 +96,65 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.is-box {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.is-flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column.is-align-top {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.column.is-align-bottom {
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.column.is-align-centered {
+    align-items: center;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row.is-align-left {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.row.is-align-right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.row.is-align-centered {
+    justify-content: center;
+}
+
+.row.is-align-space-around {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row.is-align-space-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colum.is-align-midst, .row.is-align-midst {
+    align-items: center;
+    justify-content: center;
+}
